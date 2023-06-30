@@ -10,6 +10,11 @@ import Combine
 
 final class LevelViewModel {
     
+    private let subject = PassthroughSubject<Void, Never>()
+    var reloadData: AnyPublisher<Void, Never> {
+        subject.eraseToAnyPublisher()
+    }
+    var cancellables = Set<AnyCancellable>()
     private let levelDataArray: [LevelData] = [
         LevelData(
             backgroundColorName: "ColorPastelGreen",
@@ -36,7 +41,7 @@ final class LevelViewModel {
         )
     ]
     
-    var levelDataCount: Int {
+    var numberOfRowsInSection: Int {
         levelDataArray.count
     }
     

@@ -41,14 +41,15 @@ final class LevelViewController: UIViewController {
 
 extension LevelViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        levelViewModel.levelDataCount
+        levelViewModel.numberOfRowsInSection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "LevelCell", for: indexPath) as? LevelTableViewCell else { return UITableViewCell() }
         let levelCellData = levelViewModel.makeLevel(at: indexPath.row)
-        let levelTableViewCellViewModel = LevelTableViewCellViewModel(levelCellData: levelCellData)
+        let levelTableViewCellViewModel = LevelTableViewCellViewModel(levelData: levelCellData)
         cell.configureLevelCell(with: levelTableViewCellViewModel)
+        
         return cell
     }
 }
@@ -63,11 +64,12 @@ extension LevelViewController: UITableViewDelegate {
         return headerView
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedLevel = levelViewModel.makeLevel(at: indexPath.row)
         let checkpointViewController = CheckpointViewController()
         let checkpointViewModel = CheckpointViewModel(levelData: selectedLevel)
         checkpointViewController.checkpointViewModel = checkpointViewModel
-        self.navigationController?.showDetailViewController(checkpointViewController, sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.present(checkpointViewController, animated: true)
     }
 }

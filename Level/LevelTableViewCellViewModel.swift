@@ -12,8 +12,8 @@ final class LevelTableViewCellViewModel {
     
     private let levelData: LevelData
     
-    init(levelCellData: LevelData) {
-        self.levelData = levelCellData
+    init(levelData: LevelData) {
+        self.levelData = levelData
     }
     
     var backgroundColor: String {
