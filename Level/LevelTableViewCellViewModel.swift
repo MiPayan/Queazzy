@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 final class LevelTableViewCellViewModel {
-        
+    
     private let levelData: LevelData
     
     init(levelCellData: LevelData) {

@@ -27,13 +27,14 @@ final class LevelTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 20)
+        label.textColor = .black
         return label
     }()
     
     private let subTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 15)
+        label.font = .systemFont(ofSize: 15, weight: .thin)
         label.textColor = .darkGray
         return label
     }()
@@ -41,16 +42,20 @@ final class LevelTableViewCell: UITableViewCell {
     private let difficultyLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 15)
+        label.font = .systemFont(ofSize: 15, weight: .semibold)
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.black.cgColor
         label.layer.cornerRadius = 5
         label.layer.masksToBounds = true
+        label.textAlignment = .center
+        label.textColor = .black
         return label
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.backgroundColor = .clear
+        self.selectionStyle = .none
         addSubviews()
     }
     
@@ -95,7 +100,7 @@ final class LevelTableViewCell: UITableViewCell {
             subTitleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
             subTitleLabel.heightAnchor.constraint(equalToConstant: 19),
             
-            difficultyLabel.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor),
+            difficultyLabel.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 8),
             difficultyLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8),
             difficultyLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8)
         ])

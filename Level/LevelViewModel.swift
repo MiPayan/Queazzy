@@ -14,15 +14,15 @@ final class LevelViewModel {
         LevelData(
             backgroundColorName: "ColorPastelGreen",
             title: "Small seed",
-            subTitle: "Let’s start checking your knowledge",
+            subTitle: "Let’s start checking your knowledge.",
             imageName: "EasyLevel",
             difficulty: "Easy"
         ),
         
         LevelData(
-            backgroundColorName: "ColorPastelBlue",
+            backgroundColorName: "ColorPastelLightPurple",
             title: "Budding scientist",
-            subTitle: "Are you there yet? Let’s raise the level.",
+            subTitle: "Are you there yet ? Let’s raise the level.",
             imageName: "MediumLevel",
             difficulty: "Medium"
         ),
@@ -40,7 +40,7 @@ final class LevelViewModel {
         levelDataArray.count
     }
     
-    func getCellData(at index: Int) -> LevelData {
+    func makeLevel(at index: Int) -> LevelData {
         levelDataArray[index]
       }
 }
