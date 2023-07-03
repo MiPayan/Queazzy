@@ -70,6 +70,6 @@ extension LevelViewController: UITableViewDelegate {
         let checkpointViewModel = CheckpointViewModel(levelData: selectedLevel)
         checkpointViewController.checkpointViewModel = checkpointViewModel
         tableView.deselectRow(at: indexPath, animated: true)
-        self.present(checkpointViewController, animated: true)
+        self.navigationController?.pushViewController(checkpointViewController, animated: true)
     }
 }

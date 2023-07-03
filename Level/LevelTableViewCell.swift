@@ -14,12 +14,18 @@ final class LevelTableViewCell: UITableViewCell {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 10
+        view.layer.shadowColor = UIColor(named: "ColorBorderStart")?.cgColor
+        view.layer.shadowOpacity = 0.2
+        view.layer.shadowOffset = CGSize(width: 0, height: 3)
+        view.layer.shadowRadius = 1
         return view
     }()
     
     private let levelImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -42,13 +48,13 @@ final class LevelTableViewCell: UITableViewCell {
     private let difficultyLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.textColor = .black
         label.font = .systemFont(ofSize: 15, weight: .semibold)
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.black.cgColor
         label.layer.cornerRadius = 5
         label.layer.masksToBounds = true
-        label.textAlignment = .center
-        label.textColor = .black
         return label
     }()
     
@@ -86,7 +92,7 @@ final class LevelTableViewCell: UITableViewCell {
             containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
             
             levelImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
-            levelImageView.centerYAnchor.constraint(equalTo: containerView.topAnchor),
+            levelImageView.centerYAnchor.constraint(equalTo: containerView.topAnchor, constant: 0),
             levelImageView.heightAnchor.constraint(equalToConstant: 90),
             levelImageView.widthAnchor.constraint(equalToConstant: 90),
             

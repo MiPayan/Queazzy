@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 final class CheckpointViewController: UIViewController {
     
     var checkpointViewModel: CheckpointViewModel?
+    private var dataLoadedCancellable: AnyCancellable?
     private let levelImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -54,8 +56,14 @@ final class CheckpointViewController: UIViewController {
     private lazy var startGameButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .white
+        button.backgroundColor = UIColor(named: "ColorBackgroundButton")
         button.layer.cornerRadius = 10
+        button.makeShadow()
+        button.makeBorder()
+        button.setTitle("Start", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .semibold)
+        button.addTarget(self, action: #selector(didTapStartGameButton), for: .touchUpInside)
         return button
     }()
     
@@ -64,17 +72,26 @@ final class CheckpointViewController: UIViewController {
         addSubviews()
         configureViewModel()
     }
+    
+    @objc func didTapStartGameButton() {
+        guard let checkpointViewModel else { return }
+        let levelData = checkpointViewModel.levelData
+        let quizzViewModel = QuizzViewModel(levelData: levelData)
+        let quizzViewController = QuizzViewController()
+        quizzViewController.quizzViewModel = quizzViewModel
+        self.navigationController?.pushViewController(quizzViewController, animated: true)
+    }
 }
 
 private extension CheckpointViewController {
     func configureViewModel() {
-       guard let checkpointViewModel else { return }
-       self.view.backgroundColor = UIColor(named: checkpointViewModel.backGroundColor)
-       levelImageView.image = UIImage(named: checkpointViewModel.image)
-       titleLabel.text = checkpointViewModel.title
-       subTitleLabel.text = checkpointViewModel.subTitle
-       difficultyLabel.text = checkpointViewModel.difficulty
-   }
+        guard let checkpointViewModel else { return }
+        self.view.backgroundColor = UIColor(named: checkpointViewModel.backGroundColor)
+        levelImageView.image = UIImage(named: checkpointViewModel.image)
+        titleLabel.text = checkpointViewModel.title
+        subTitleLabel.text = checkpointViewModel.subTitle
+        difficultyLabel.text = checkpointViewModel.difficulty
+    }
     
     func addSubviews() {
         view.addSubview(levelImageView)
@@ -83,7 +100,7 @@ private extension CheckpointViewController {
         view.addSubview(difficultyLabel)
         view.addSubview(startGameButton)
         NSLayoutConstraint.activate([
-            levelImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 32),
+            levelImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
             levelImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             levelImageView.heightAnchor.constraint(equalToConstant: 200),
             levelImageView.widthAnchor.constraint(equalToConstant: 200),
@@ -93,7 +110,7 @@ private extension CheckpointViewController {
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             titleLabel.heightAnchor.constraint(equalToConstant: 24),
             
-            subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
             subTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             subTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             subTitleLabel.heightAnchor.constraint(equalToConstant: 19),

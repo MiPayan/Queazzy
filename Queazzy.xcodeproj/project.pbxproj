@@ -11,11 +11,13 @@
 		371581772A4D820B004609B5 /* QuizzLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371581762A4D820B004609B5 /* QuizzLoader.swift */; };
 		3715817A2A4D83B6004609B5 /* QuizzResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371581792A4D83B6004609B5 /* QuizzResponse.swift */; };
 		3715817D2A4D9616004609B5 /* LevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715817C2A4D9616004609B5 /* LevelViewModel.swift */; };
-		3715817F2A4D9CB4004609B5 /* QuizzTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715817E2A4D9CB4004609B5 /* QuizzTableViewCell.swift */; };
-		371581812A4DA0F1004609B5 /* QuizzTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371581802A4DA0F1004609B5 /* QuizzTableViewCellViewModel.swift */; };
 		3725BFC52A4DC1D900F46136 /* LevelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3725BFC42A4DC1D900F46136 /* LevelTableViewCell.swift */; };
 		3725BFC72A4DC77E00F46136 /* LevelTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3725BFC62A4DC77E00F46136 /* LevelTableViewCellViewModel.swift */; };
 		3725BFC92A4DC9B900F46136 /* LevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3725BFC82A4DC9B900F46136 /* LevelData.swift */; };
+		37598FBD2A52C9B100973005 /* QuizzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37598FBC2A52C9B100973005 /* QuizzViewController.swift */; };
+		37598FBF2A52CD0E00973005 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37598FBE2A52CD0E00973005 /* TimerView.swift */; };
+		37598FC12A52DE3D00973005 /* QuizzViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37598FC02A52DE3D00973005 /* QuizzViewModel.swift */; };
+		37598FC72A5316F600973005 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37598FC62A5316F600973005 /* UIButton.swift */; };
 		37ACE3532A4C24FB00128F85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACE3522A4C24FB00128F85 /* AppDelegate.swift */; };
 		37ACE3552A4C24FB00128F85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACE3542A4C24FB00128F85 /* SceneDelegate.swift */; };
 		37ACE3572A4C24FB00128F85 /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ACE3562A4C24FB00128F85 /* LevelViewController.swift */; };
@@ -31,11 +33,13 @@
 		371581762A4D820B004609B5 /* QuizzLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzLoader.swift; sourceTree = "<group>"; };
 		371581792A4D83B6004609B5 /* QuizzResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzResponse.swift; sourceTree = "<group>"; };
 		3715817C2A4D9616004609B5 /* LevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewModel.swift; sourceTree = "<group>"; };
-		3715817E2A4D9CB4004609B5 /* QuizzTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzTableViewCell.swift; sourceTree = "<group>"; };
-		371581802A4DA0F1004609B5 /* QuizzTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		3725BFC42A4DC1D900F46136 /* LevelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTableViewCell.swift; sourceTree = "<group>"; };
 		3725BFC62A4DC77E00F46136 /* LevelTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		3725BFC82A4DC9B900F46136 /* LevelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelData.swift; sourceTree = "<group>"; };
+		37598FBC2A52C9B100973005 /* QuizzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzViewController.swift; sourceTree = "<group>"; };
+		37598FBE2A52CD0E00973005 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		37598FC02A52DE3D00973005 /* QuizzViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzViewModel.swift; sourceTree = "<group>"; };
+		37598FC62A5316F600973005 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		37ACE34F2A4C24FB00128F85 /* Queazzy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Queazzy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37ACE3522A4C24FB00128F85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37ACE3542A4C24FB00128F85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,8 +84,9 @@
 		3715817B2A4D95FE004609B5 /* Quizz */ = {
 			isa = PBXGroup;
 			children = (
-				371581802A4DA0F1004609B5 /* QuizzTableViewCellViewModel.swift */,
-				3715817E2A4D9CB4004609B5 /* QuizzTableViewCell.swift */,
+				37598FC02A52DE3D00973005 /* QuizzViewModel.swift */,
+				37598FBC2A52C9B100973005 /* QuizzViewController.swift */,
+				37598FBE2A52CD0E00973005 /* TimerView.swift */,
 			);
 			path = Quizz;
 			sourceTree = "<group>";
@@ -98,11 +103,20 @@
 			path = Level;
 			sourceTree = "<group>";
 		};
+		37598FC52A5316DA00973005 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				37598FC62A5316F600973005 /* UIButton.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		37ACE3462A4C24FB00128F85 = {
 			isa = PBXGroup;
 			children = (
 				37ACE3512A4C24FB00128F85 /* Queazzy */,
 				37ACE3662A4C250800128F85 /* Ressources */,
+				37598FC52A5316DA00973005 /* Extensions */,
 				371581712A4D81E5004609B5 /* Networking */,
 				371581782A4D83A7004609B5 /* DataModel */,
 				3725BFC32A4DC02000F46136 /* Level */,
@@ -218,21 +232,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37598FC72A5316F600973005 /* UIButton.swift in Sources */,
 				3725BFC92A4DC9B900F46136 /* LevelData.swift in Sources */,
 				371581772A4D820B004609B5 /* QuizzLoader.swift in Sources */,
 				37ACE3572A4C24FB00128F85 /* LevelViewController.swift in Sources */,
 				37ACE3532A4C24FB00128F85 /* AppDelegate.swift in Sources */,
 				37D344982A4EE8B500405C9B /* CheckpointViewController.swift in Sources */,
-				3715817F2A4D9CB4004609B5 /* QuizzTableViewCell.swift in Sources */,
 				3725BFC52A4DC1D900F46136 /* LevelTableViewCell.swift in Sources */,
+				37598FBF2A52CD0E00973005 /* TimerView.swift in Sources */,
 				3715817D2A4D9616004609B5 /* LevelViewModel.swift in Sources */,
 				3715817A2A4D83B6004609B5 /* QuizzResponse.swift in Sources */,
 				37D344962A4EE89700405C9B /* CheckpointViewModel.swift in Sources */,
 				37ACE3552A4C24FB00128F85 /* SceneDelegate.swift in Sources */,
-				371581812A4DA0F1004609B5 /* QuizzTableViewCellViewModel.swift in Sources */,
 				37D344932A4ED2AE00405C9B /* LevelTableViewHeaderView.swift in Sources */,
 				371581732A4D81F4004609B5 /* Networking.swift in Sources */,
 				3725BFC72A4DC77E00F46136 /* LevelTableViewCellViewModel.swift in Sources */,
+				37598FC12A52DE3D00973005 /* QuizzViewModel.swift in Sources */,
+				37598FBD2A52C9B100973005 /* QuizzViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
